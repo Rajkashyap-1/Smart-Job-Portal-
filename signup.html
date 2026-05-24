@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up | SmartPortal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body style="display: flex; align-items: center; justify-content: center; min-height: 100vh;">
+    <div class="glass" style="width: 100%; max-width: 450px; padding: 3rem; text-align: center;">
+        <div class="logo" style="margin-bottom: 2rem; font-size: 2rem;">SmartPortal</div>
+        <h2 style="margin-bottom: 0.5rem;">Create Account</h2>
+        <p style="color: var(--text-muted); margin-bottom: 2rem;">Join the smartest job matching network</p>
+        
+        <form id="signupForm">
+            <div style="text-align: left; margin-bottom: 1.2rem;">
+                <label style="display: block; margin-bottom: 0.5rem; font-size: 0.9rem; color: var(--text-muted);">Full Name</label>
+                <input type="text" id="signupName" placeholder="Raj Kashyap" required style="width: 100%; padding: 0.8rem; border-radius: 8px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); color: white; outline: none;">
+            </div>
+            <div style="text-align: left; margin-bottom: 1.2rem;">
+                <label style="display: block; margin-bottom: 0.5rem; font-size: 0.9rem; color: var(--text-muted);">Email Address</label>
+                <input type="email" id="signupEmail" placeholder="student@example.edu" required style="width: 100%; padding: 0.8rem; border-radius: 8px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); color: white; outline: none;">
+            </div>
+            <div style="text-align: left; margin-bottom: 2rem;">
+                <label style="display: block; margin-bottom: 0.5rem; font-size: 0.9rem; color: var(--text-muted);">Create Password</label>
+                <input type="password" id="signupPass" placeholder="••••••••" required style="width: 100%; padding: 0.8rem; border-radius: 8px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); color: white; outline: none;">
+            </div>
+            <div style="text-align: left; margin-bottom: 2rem;">
+                <label style="display: block; margin-bottom: 0.5rem; font-size: 0.9rem; color: var(--text-muted);">I am a...</label>
+                <select id="signupRole" style="width: 100%; padding: 0.8rem; border-radius: 8px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); color: white; outline: none; appearance: none;">
+                    <option value="candidate" style="color: black;">Candidate (Looking for jobs)</option>
+                    <option value="recruiter" style="color: black;">Recruiter (Posting jobs)</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem;">Register Now</button>
+        </form>
+        
+        <p style="margin-top: 1.5rem; font-size: 0.9rem; color: var(--text-muted);">
+            Already have an account? <a href="login.html" style="color: var(--primary);">Login Here</a>
+        </p>
+    </div>
+
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('signupName').value;
+            const email = document.getElementById('signupEmail').value;
+            const role = document.getElementById('signupRole').value;
+            
+            // Simulate database storage
+            const users = JSON.parse(localStorage.getItem('portalUsers') || '[]');
+            users.push({ name, email, role, date: new Date().toLocaleDateString() });
+            localStorage.setItem('portalUsers', JSON.stringify(users));
+            sessionStorage.setItem('currentUser', name);
+            sessionStorage.setItem('currentUserRole', role);
+            
+            window.location.href = 'login.html?success=true';
+        });
+    </script>
+</body>
+</html>
