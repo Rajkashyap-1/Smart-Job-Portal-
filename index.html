@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartPortal | Match Your Career</title>
+    <meta name="description" content="AI-powered job portal that matches your resume with the perfect job opportunities.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">SmartPortal <span style="font-size: 0.8rem; font-weight: 400; opacity: 0.7;">MCA Project</span></div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="applications.html">Applications</a></li>
+                <li><a href="interviews.html">Interviews</a></li>
+                <li><a href="ai-assistant.html">AI Assistant</a></li>
+                <li><a href="profile.html">Profile</a></li>
+            </ul>
+        </nav>
+        <div class="auth">
+            <a href="login.html" class="btn btn-outline">Login</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero animate-up">
+            <h1>Find Your Dream Job with <span>AI Precision</span></h1>
+            <p>The Complete Recruitment Workflow: Login, Setup Profile, Upload Resume, and Match with Top Companies.</p>
+            <div class="cta-group">
+                <a href="login.html" class="btn btn-primary">Start Your Journey</a>
+                <a href="#workflow" class="btn btn-outline">How it Works</a>
+            </div>
+        </section>
+
+        <section id="upload" class="upload-container animate-up" style="animation-delay: 0.2s; margin-top: 4rem;">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Upload Your Resume</h2>
+                <p style="color: var(--text-muted);">Let our AI parse your profile and match you with the best opportunities.</p>
+            </div>
+            
+            <div class="glass drop-zone" id="dropZone" style="max-width: 600px; margin: 0 auto;">
+                <input type="file" id="fileInput" hidden accept=".pdf,.doc,.docx">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <h2>Drop Resume Here</h2>
+                <p>or click to browse from your device</p>
+                <p style="font-size: 0.8rem; margin-top: 1rem; color: var(--text-muted);">Supported formats: PDF, DOCX (Max 5MB)</p>
+            </div>
+            
+            <div id="fileInfo" style="display: none; margin-top: 1.5rem; max-width: 600px; margin-left: auto; margin-right: auto;" class="glass p-4">
+                <p id="fileName" style="font-weight: 600;"></p>
+                <div class="progress-bar" style="height: 4px; background: var(--glass-border); border-radius: 2px; margin-top: 0.5rem; overflow: hidden;">
+                    <div id="progressFill" style="height: 100%; width: 0%; background: var(--primary); transition: 0.3s;"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="workflow" style="padding: 6rem 10%; text-align: center;" class="animate-up">
+            <h2 style="margin-bottom: 3rem;">Student Recruitment Workflow</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
+                <div class="glass" style="padding: 2rem;">
+                    <div style="font-size: 2rem; color: var(--primary); margin-bottom: 1rem;">01</div>
+                    <h4>Login</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">Secure access to the portal.</p>
+                </div>
+                <div class="glass" style="padding: 2rem;">
+                    <div style="font-size: 2rem; color: var(--primary); margin-bottom: 1rem;">02</div>
+                    <h4>Create Profile</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">Setup your professional identity.</p>
+                </div>
+                <div class="glass" style="padding: 2rem;">
+                    <div style="font-size: 2rem; color: var(--primary); margin-bottom: 1rem;">03</div>
+                    <h4>Upload Resume</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">Let AI analyze your skills.</p>
+                </div>
+                <div class="glass" style="padding: 2rem;">
+                    <div style="font-size: 2rem; color: var(--primary); margin-bottom: 1rem;">04</div>
+                    <h4>Match & Apply</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">Find high-paying jobs.</p>
+                </div>
+                <div class="glass" style="padding: 2rem;">
+                    <div style="font-size: 2rem; color: var(--primary); margin-bottom: 1rem;">05</div>
+                    <h4>Interview</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">Track your progress live.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="features" id="features" style="padding: 6rem 10%;">
+            <div class="stats-grid">
+                <div class="glass stat-card">
+                    <i class="fas fa-brain" style="color: var(--primary); margin-bottom: 1rem; font-size: 1.5rem;"></i>
+                    <h3>AI Matching</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Advanced NLP to parse your resume and extract key skills.</p>
+                </div>
+                <div class="glass stat-card">
+                    <i class="fas fa-bolt" style="color: var(--accent); margin-bottom: 1rem; font-size: 1.5rem;"></i>
+                    <h3>Instant Results</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Get matched with high-relevance jobs in seconds.</p>
+                </div>
+                <div class="glass stat-card">
+                    <i class="fas fa-chart-line" style="color: #f59e0b; margin-bottom: 1rem; font-size: 1.5rem;"></i>
+                    <h3>Career Growth</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Personalized insights on skill gaps and market trends.</p>
+                </div>
+            </div>
+
+            <div style="margin-top: 6rem; text-align: center;" class="animate-up">
+                <h2 style="margin-bottom: 2rem;">Technology Stack</h2>
+                <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
+                    <div class="glass" style="padding: 1.5rem; width: 180px;">
+                        <i class="fab fa-html5" style="font-size: 2rem; color: #e34f26;"></i>
+                        <p style="margin-top: 0.5rem;">HTML5/CSS3</p>
+                    </div>
+                    <div class="glass" style="padding: 1.5rem; width: 180px;">
+                        <i class="fab fa-js" style="font-size: 2rem; color: #f7df1e;"></i>
+                        <p style="margin-top: 0.5rem;">JavaScript ES6+</p>
+                    </div>
+                    <div class="glass" style="padding: 1.5rem; width: 180px;">
+                        <i class="fab fa-java" style="font-size: 2rem; color: #007396;"></i>
+                        <p style="margin-top: 0.5rem;">Java Spring Boot</p>
+                    </div>
+                    <div class="glass" style="padding: 1.5rem; width: 180px;">
+                        <i class="fas fa-database" style="font-size: 2rem; color: #4479a1;"></i>
+                        <p style="margin-top: 0.5rem;">MySQL/PostgreSQL</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
